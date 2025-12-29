@@ -156,16 +156,16 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    /* height: 100vh;  Removed to allow content to grow */
+    min-height: 100dvh; /* Use dvh for better mobile browser support */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 5%;
+    padding: 120px 5% 0; /* Added top padding to clear fixed header */
     position: relative;
     /* overflow: hidden; Removed to prevent clipping */
-    min-height: 100vh;
 }
 
 .hero-content h1 {
@@ -548,6 +548,7 @@ footer {
     font-size: 1.5rem;
     border: 1px solid var(--color-primary);
     transition: var(--transition);
+    flex-shrink: 0; /* Prevent squashing on small screens */
 }
 
 .contact-item:hover .icon-circle {
